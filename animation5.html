@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh; 
+        }
+        .btn{
+            padding: 0.5em 2em;
+            font-size: 2em;
+            border:5px solid black;
+            background-color: dimgrey;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::before{
+            top: 0;
+            left: 0;
+            content: "";
+            position :absolute ;
+            background-color:rgb(194, 18, 18) ;
+            transform: scale(0);
+            transition-duration: 0.1s;
+            transform-origin: left bottom;
+            width:  100%;
+            height: 100%;
+        }
+        .btn:hover::before{
+            transform: scale(1);
+        }
+        .btn::after{
+            left: -3rem;
+            top: 0;
+            content: "";
+            position :absolute ;
+            background-color:dimgray;
+            transform: scale(1) rotate(-40deg) ;
+            transition-duration: 0.1s;
+            /* transform-origin: top right; */
+            transform-origin: top right;
+            width: 3%;
+            height: 300%;
+        }
+        .btn:hover::after{
+            background-color : white;
+            transform: rotate(-40deg) translate(260px,50px);
+            /* animation: anim 1s; */
+            
+        }
+        .btn span{
+            color: white;
+            position: relative;
+            z-index: 1;
+            
+        }
+        /* @keyframes anim{
+            0%{
+                transform: translate(0,0);
+            }
+            100%{
+                transform: translate(-100px,100px);
+            }
+        } */
+</style>
+<body>
+    <button class="btn">
+        <span>Hoverable</span> 
+      </button>
+</body>
+</html>

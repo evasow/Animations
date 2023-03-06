@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0; 
+       }
+    .btn{
+        padding: 0.5em 2em;
+        font-size: 2em;
+        color: black
+        border:1 gray;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    .btn::before{
+        content: "";
+        position :absolute ;
+        left :0;
+        bottom: 0;
+        width: 60%;
+        height: 100%;
+        background-color:firebrick ;
+    
+        transform-origin:  left bottom; 
+        transition:2s;
+        transform: rotate(-90deg) ;
+    }
+    .btn span{
+        position: relative;
+        z-index: 1;
+    }
+    .btn:hover::before{
+        color: white;
+        transform: rotate(0deg) ;
+        
+    }
+    .btn::after{
+        content: "";
+        position :absolute ;
+        right :0;
+        bottom: 0;
+        width: 60%;
+        height: 100%;
+        background-color:firebrick ;
+        transform-origin:  right bottom; 
+        transition:2s;
+        transform: rotate(90deg) ;
+    }
+    .btn:hover::after{
+        color: white;
+        transform: rotate(0deg) ;
+    }
+</style>
+<body>
+    <button class="btn">
+        <span>Hoverable</span> 
+      </button>
+</body>
+</html>

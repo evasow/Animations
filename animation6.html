@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh; 
+            background-color: gray;
+            
+        }
+        .btn{
+            padding: 0.5em 2em;
+            font-size: 2em;
+            border:4px solid white;
+            background-color: dimgrey;
+            position: relative;
+            /* overflow: hidden; */
+            width: 7em;
+            height: 2em;
+            
+        }
+        /* .btn span{
+            color: white;
+            position: relative;
+            z-index: 1;   
+        } */
+        .btn::before{
+            top: 0;
+            left: 0;
+            transform: translate(-100%, 100%);
+            content: "Hoverable";
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position :absolute ;
+            background-color: greenyellow ;
+            /* transform: scale(1); */
+            transition-duration: 1s;
+            /* transform-origin: left bottom; */
+            width: 100%;
+            height: 100%;
+            /* animation-name: essuieglass;
+            animation-duration: 2s; */
+    
+        }
+        .btn:hover::before{
+            transform: translate(0%, 0%);
+           
+        } 
+        .btn::after{
+            top: 0;
+            right: 0;
+            content: "Hoverable";
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position :absolute ;
+            background-color: rgb(180, 31, 31) ;
+            /* transform: scale(1); */
+            transition-duration: 1s;
+            /* transform-origin: left bottom; */
+            width: 100%;
+            height: 100%;
+            /* animation-name: essuieglass;
+            animation-duration: 2s; */
+        }
+        .btn:hover::after{
+            transform: translate(100%, -100%);
+            /* transform: scale(1) ;  */
+            /* animation: after 1s; */
+        }
+        /* @keyframes before
+        {
+            from {
+                transform: translateX(0) translateY(0);
+            }
+            to {
+                transform: translateX(276px) translateY(-67px);
+            }
+            
+        }
+        @keyframes after 
+        {
+            from {
+                transform: translateX(0) translateY(0);
+            }
+            to {
+                transform: translateX(276px) translateY(-67px);
+            }
+            
+        } */
+</style>
+<body>
+    <button class="btn">
+        <!-- <span>Hoverable </span>  -->
+      </button>
+</body>
+</html>

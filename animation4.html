@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh; 
+        }
+        .btn{
+            padding: 0.5em 2em;
+            font-size: 2em;
+            color: black
+            border:1px gray;
+            background-color: white;
+            position: relative;
+        }
+        .btn::before{
+            top: 0;
+            left: 0;
+            content: "COOL !";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position :absolute ;
+            background-color:rgb(194, 18, 18) ;
+            transform: scaleY(0);
+            transition-duration: 2s;
+            transform-origin: top;
+            width: 100%;
+            height: 100%;
+        }
+        .btn:hover::before{
+            transform: scaleY(1);
+        }
+</style>
+<body>
+    <button class="btn">
+        <span>Hoverable</span> 
+    </button>
+</body>
+</html>

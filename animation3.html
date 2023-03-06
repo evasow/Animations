@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh; 
+        }
+      .btn{
+            padding: 0.5em 2em;
+            font-size: 2em;
+            color: black
+            border:1 gray;
+            background-color: white;
+            position: relative;
+        }
+        .btn::before{
+            top: 20px;
+            left: 0;
+            content: "";
+            position :absolute ;
+            background-color:rgb(143, 229, 13) ;
+            transform: scaleY(0);
+            transition-duration: 2s;
+            width: 100%;
+            height: 40%;
+        }
+        .btn:hover::before{
+            transform: scaleY(1);
+        }
+        .btn::after{
+            left: 105px;
+            top: 0;
+            content: "";
+            position :absolute ;
+            background-color:rgb(143, 229, 13) ;
+            transform: scaleX(0);
+            transition-duration: 2s;
+            /* transform-origin: top bottom; */
+            width: 20%;
+            height: 100%;
+        }
+        .btn:hover::after{
+            transform: scaleX(1);
+        }
+        .btn span{
+            position: relative;
+            z-index: 1;
+        }
+</style>
+<body>
+    <button class="btn">
+        <span>Pharmacie</span> 
+      </button>
+</body>
+</html>

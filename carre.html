@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+.carre1{
+    background-color: red;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border: 4px solid black; */
+}
+h1{
+    text-align: center;
+    position: relative;
+}
+h1 span{
+    color: white;
+}
+.carre2{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    transform: rotate(45deg);
+    /* border: 4px solid; */
+    transition-property:background-color;
+    transition-duration: 3s;
+    box-sizing: border-box;
+}
+
+/* .carre2:hover{
+    /* background-color: aquamarine; 
+} */
+.carre1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid white ;
+    border-bottom: 4px solid white;
+    box-sizing: border-box;
+    transform: scaleX(0);
+    transition-duration: 3s;
+    transition-property: transform;
+}
+
+.carre1:hover::before{
+    transform: scaleX(1);
+    /* transition-delay: 3s; */
+}
+
+.carre1::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 4px solid white ;
+    border-right: 4px solid white;
+    box-sizing: border-box;
+    transform: scaleY(0);
+    transition-duration: 3s;
+    transition-property: transform;
+}
+
+.carre1:hover::after{
+    transform: scaleY(1);
+    
+}
+.carre2::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid white ;
+    border-bottom: 4px solid white;
+    transform: scaleX(0);
+    transition-duration: 3s;
+    transition-property: transform;
+}
+.carre2:hover::before{
+    transform: scaleX(1);
+    /* transition-delay: 3s; */
+}
+
+.carre2::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 4px solid white ;
+    border-right: 4px solid white;
+    transform: scaleY(0);
+    transition-duration: 3s;
+    transition-property: transform;
+}
+.carre2:hover::after{
+    transform: scaleY(1);
+    /* transition-delay: 3s; */
+}
+/* .carre1:hover .carre2::after{
+    transform: scaleY(1);
+    transition-delay: 3s;
+} */
+
+
+
+
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    
+        <div class="carre1">
+            <div class="carre2"></div>
+            <h1>
+                CSS <br> IS <br> <span>VERY</span>  <br> COOL
+            </h1>
+        </div>
+    
+
+
+</body>
+</html>
